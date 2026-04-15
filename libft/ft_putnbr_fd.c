@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                   ########        #####    */
-/*   ft_strsub.c                                   #+#    #+#       #+#:#     */
+/*   ft_putnbr_fd.c                                #+#    #+#       #+#:#     */
 /*                                                       #:#      ##  #:#     */
 /*   By: absolute <napoleof>                          #+#      +#    #:#      */
 /*                                                 #+#              #+#       */
-/*   Created: 2026/04/10 11:00:25 by absolute     ##               #+#        */
-/*   Updated: 2026/04/10 11:00:25 by absolute     ########        ###         */
+/*   Created: 2026/04/15 06:25:31 by absolute     ##               #+#        */
+/*   Updated: 2026/04/15 06:25:31 by absolute     ########        ###         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*substr;
-	size_t	s_len;
-	size_t	i;
+	long	nbr;
 
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(len * sizeof(char) + 1);
-	if (!substr)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	nbr = n;
+	if (nbr < 0)
 	{
-		substr[i] = s[start + i];
-		i++;
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
 	}
-	substr[i] = '\0';
-	return (substr);
+	if (nbr >= 10)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putchar_fd(nbr % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(nbr + '0', fd);
 }

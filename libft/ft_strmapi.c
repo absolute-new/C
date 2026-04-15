@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                   ########        #####    */
-/*   ft_strsub.c                                   #+#    #+#       #+#:#     */
+/*   ft_strmapi.c                                  #+#    #+#       #+#:#     */
 /*                                                       #:#      ##  #:#     */
 /*   By: absolute <napoleof>                          #+#      +#    #:#      */
 /*                                                 #+#              #+#       */
-/*   Created: 2026/04/10 11:00:25 by absolute     ##               #+#        */
-/*   Updated: 2026/04/10 11:00:25 by absolute     ########        ###         */
+/*   Created: 2026/04/15 06:37:00 by absolute     ##               #+#        */
+/*   Updated: 2026/04/15 06:37:00 by absolute     ########        ###         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*substr;
-	size_t	s_len;
+	char	*result;
 	size_t	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(len * sizeof(char) + 1);
-	if (!substr)
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		substr[i] = s[start + i];
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	result[i] = '\0';
+	return (result);
 }

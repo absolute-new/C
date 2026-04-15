@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                   ########        #####    */
-/*   ft_strsub.c                                   #+#    #+#       #+#:#     */
+/*   ft_strtrim.c                                  #+#    #+#       #+#:#     */
 /*                                                       #:#      ##  #:#     */
 /*   By: absolute <napoleof>                          #+#      +#    #:#      */
 /*                                                 #+#              #+#       */
-/*   Created: 2026/04/10 11:00:25 by absolute     ##               #+#        */
-/*   Updated: 2026/04/10 11:00:25 by absolute     ########        ###         */
+/*   Created: 2026/04/12 18:02:19 by absolute     ##               #+#        */
+/*   Updated: 2026/04/12 18:02:19 by absolute     ########        ###         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*substr;
-	size_t	s_len;
+	char	*str;
+	size_t	start;
+	size_t	end;
 	size_t	i;
 
-	if (!s)
+	if (!s1 || !set)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(len * sizeof(char) + 1);
-	if (!substr)
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	str = (char *)malloc(end - start + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (start < end)
 	{
-		substr[i] = s[start + i];
-		i++;
+		str[i++] = s1[start++];
 	}
-	substr[i] = '\0';
-	return (substr);
+	str[i] = '\0';
+	return (str);
 }
