@@ -64,6 +64,20 @@ int		ft_isblank(int c);
 int		ft_iscntrl(int c);
 int		ft_isgraph(int c);
 int		ft_islower(int c);
+int		ft_isspace(int c);
+int		ft_isupper(int c);
+int		ft_isxdigit(int c);
+char	*ft_itoa_base(int value, int base);
+char	*ft_strcapitalize(char *str);
+int		ft_strcasecmp(const char *s1, const char *s2);
+char	*ft_strcasestr(const char *haystack, const char *needle);
+int		ft_str_is_alpha(char *str);
+int		ft_str_is_lowercase(char *str);
+int		ft_str_is_numeric(char *str);
+char	*ft_strlowcase(char *str);    
+
+// str_is_printable str_is_uppercase 
+// strncasecmp strndup strtok strupcase
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
