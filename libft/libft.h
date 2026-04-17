@@ -74,10 +74,13 @@ char	*ft_strcasestr(const char *haystack, const char *needle);
 int		ft_str_is_alpha(char *str);
 int		ft_str_is_lowercase(char *str);
 int		ft_str_is_numeric(char *str);
-char	*ft_strlowcase(char *str);    
-
-// str_is_printable str_is_uppercase 
-// strncasecmp strndup strtok strupcase
+char	*ft_strlowcase(char *str);
+int		ft_str_is_printable(char *str);
+int		ft_str_is_uppercase(char *str);
+char	*ft_strndup(const char *s1, size_t n);
+char	*ft_strtok(char *str, const char *delim);
+char	*ft_strupcase(char *str);
+int		ft_strncasecmp(const char *s1, const char *s2, size_t n);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

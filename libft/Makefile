@@ -13,13 +13,14 @@ SRCS		= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c     \
 	   		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c      \
 	   		ft_strtrim.c ft_isblank.c ft_iscntrl.c ft_isgraph.c ft_islower.c \
 			ft_isspace.c ft_isupper.c ft_isxdigit.c ft_itoa_base.c           \
-			ft_strcapitalize.c ft_strcasecmp.c ft_strcasestr.c               \
+			ft_strcapitalize.c ft_strcasecmp.c ft_strcasestr.c ft_strndup.c  \
 			ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c      \
-			ft_strlowcase.c \
+			ft_strlowcase.c ft_str_is_printable.c ft_str_is_uppercase.c      \
+			ft_strtok.c ft_strupcase.c ft_strncasecmp.c                      \
 
-BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c  \
-            ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-            ft_lstmap.c                                                \
+BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c        \
+            ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c       \
+            ft_lstmap.c                                                      \
 
 # Object files
 OBJS		= $(SRCS:.c=.o)
