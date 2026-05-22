@@ -337,7 +337,7 @@ void	test_bonus_char(void)
 	y = ft_printf("  Ft:\tChar [%0*c]\n", 8, 'x');
 	y = ft_printf("  Ft:\tChar [%-0*c]\n", 8, 'x');
 
-/*	printf("\n----------- TEST: WIDTH %% -----------\n\n");
+	printf("\n----------- TEST: WIDTH %% -----------\n\n");
 	x = printf("  Or:\tChar [%20%]\n");
 	y = ft_printf("  Ft:\tChar [%20%]\n");
 	printf("Printf = %d, ft_printf = %d\n\n", x, y);
@@ -345,7 +345,7 @@ void	test_bonus_char(void)
 	x = printf("  Or:\tChar [%0*%]\n", 8);
 	y = ft_printf("  Ft:\tChar [%0*%]\n", 8);
 	printf("Printf = %d, ft_printf = %d\n\n", x, y);
-*/}
+}
 
 void	test_bonus_str(void)
 {

@@ -32,7 +32,7 @@ static int	ft_hundle_format(va_list args, const char spec, t_flags flags)
 		case 'X':
 			return (ft_puthex_flags(va_arg(args, unsigned int), 1, flags));
 		case '%':
-			return (ft_putchar_flags('%', flags));
+			return (ft_putchar('%'));
 		default:
 			break;
 	}
