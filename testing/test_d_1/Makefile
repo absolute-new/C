@@ -1,10 +1,8 @@
 #			OS Win/Lin
 ifeq ($(OS), Windows_NT)
-	RM			:= del /Q
-	EXT			:= .exe
+	EXT		:= .exe
 else
-	RM			:= rm -f
-	EXT			:=
+	EXT		:=
 endif
 
 #			Programm name
