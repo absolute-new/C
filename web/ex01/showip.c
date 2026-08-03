@@ -88,6 +88,7 @@ int	main(int ac, char *av[])
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_ALL;
 	status = getaddrinfo(av[1], NULL, &hints, &res);
 	if (status != 0)
 	{
