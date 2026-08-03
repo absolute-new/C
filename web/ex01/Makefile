@@ -24,7 +24,7 @@ SRCS		= $(wildcard ./*.c)
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	$(CC) $(CCFLAGS) -o $@ $^
+	$(CC) $(CCFLAGS) -o $@ $^ $(LIBS)
 
 clean:
 	rm -f $(NAME)

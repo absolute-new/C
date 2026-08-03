@@ -4,7 +4,10 @@
 #ifdef _WIN32
 	#include <winsock2.h>	/**<  для сокетов (AF_INET, SOCK_STREAM) */
 	#include <ws2tcpip.h>	/**< для inet_ntop */
-	#pragma comment(lib, "ws2_32.lib")
+
+	# ifdef _MSC
+		#pragma comment(lib, "ws2_32.lib")
+	# endif
 
 	#define CLOSE_SOCKET(s)		closesocket(s)
 	#define IS_VALID_SOCKET(s)	((s) != INVALID_SOCKET)
